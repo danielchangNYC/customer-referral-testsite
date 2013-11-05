@@ -1,0 +1,10 @@
+<h1><%= @customer.name %>'s Info</h1>
+
+ID: <%= @customer.id %><br>
+Name: <%= @customer.name %><br>
+<% if @customer.referring_customer %>
+  <p>Referred by: <%= @customer.referring_customer.name %></p>
+<% end %><br>
+
+<a href="/customers/<%= @customer.id %>/edit">Edit</a> | 
+<%= button_to 'Destroy', @customer, :method => :delete %>

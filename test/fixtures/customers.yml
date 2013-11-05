@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  referring_customer_id: 1
+
+two:
+  name: MyString
+  referring_customer_id: 1

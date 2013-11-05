@@ -1,0 +1,21 @@
+<h1>Customer Home Page</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Referred by</th>
+    </tr>
+  </thead>
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><%= customer.id %></td>
+      <td><%= link_to customer.name, customer %></td>
+      <% if customer.referring_customer %>
+        <td><%= link_to customer.referring_customer.name, customer.referring_customer %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
+
+<%= render "layouts/footer" %>

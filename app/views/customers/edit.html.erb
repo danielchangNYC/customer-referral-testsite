@@ -1,0 +1,12 @@
+<h1>Edit <%= @customer.name %></h1>
+
+<%= form_for @customer, url: {action: "update"} do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= collection_select(:customer, :referring_customer_id, Customer.all, :id, :name, :prompt => true) %>
+  
+  <%= f.submit "Update" %>
+<% end %>
+
+<a href="/customers">Cancel</a>
