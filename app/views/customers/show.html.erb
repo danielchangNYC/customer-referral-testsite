@@ -5,6 +5,12 @@ Name: <%= @customer.name %><br>
 <% if @customer.referring_customer %>
   <p>Referred by: <%= @customer.referring_customer.name %></p>
 <% end %><br>
+<% unless @customer.referrals.empty? %>
+  <p>Referred:</p>
+  <ul><% @customer.referrals.each do |referral| %>  
+    <li> <%= referral.name %></li>
+    <% end %></ul>
+<% end %><br>
 
 <a href="/customers/<%= @customer.id %>/edit">Edit</a> | 
 <%= button_to 'Destroy', @customer, :method => :delete %>
